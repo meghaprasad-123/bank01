@@ -25,50 +25,33 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // login(){
-  //    var acno=this.acno
-  //    var psd=this.psd
-  //    var userDetails=this.userDetails
+  login(){
+     var acno=this.acno
+     var psd=this.psd
+     var userDetails=this.userDetails
 
-  //    if(acno in userDetails){
-  //        if(psd==userDetails[acno]['password']){
-  //         alert('Login success')
-  //        }
-  //        else{
-  //         alert('Incorrect password')
-  //        }
-  //    }
-  //    else{
-  //     alert('User not exist')
-  //    }
-  // }
-
-//   acnoChange(event:any){
-//     this.acno=event.target.value
-//     // console.log(event.target.value);
-//   }
-
-//   psdChange(event:any){
-//     this.psd=event.target.value
-//   }
-
-// }
-
-login(a:any,b:any){
-  var acno=a.value
-  var psd=b.value
-  var userDetails=this.userDetails
-
-  if(acno in userDetails){
-      if(psd==userDetails[acno]['password']){
-       alert('Login success')
-      }
-      else{
-       alert('Incorrect password')
-      }
+     if(acno in userDetails){
+         if(psd==userDetails[acno]['password']){
+          alert('Login success')
+         }
+         else{
+          alert('Incorrect password')
+         }
+     }
+     else{
+      alert('User not exist')
+     }
   }
-  else{
-   alert('User not exist')
+
+  acnoChange(event:any){
+    this.acno=event.target.value
+    // console.log(event.target.value);
   }
+
+  psdChange(event:any){
+    this.psd=event.target.value
+  }
+
 }
+
 

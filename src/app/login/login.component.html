@@ -1,5 +1,5 @@
 
-<!-- <div><h3 class="text-light">{{aim}}</h3></div> -->
+<div><h3 style="font-family: 'Dancing Script', cursive;" class="text-light text-center fs-1 mt-4">{{aim}}</h3></div>
 
 <div class="row">
   <div id="l1" class="container border border-dark ">
@@ -7,16 +7,16 @@
 
     <div class="mt-4 p-2">
       <label style="color: rgb(240, 184, 16);font-size:17px;" for="">Account Number</label>
-      <input #acno id="acc" name="accno" type="text" class="form-control" [placeholder]="data">
+      <input (change)="acnoChange($event)" id="acc" name="accno" type="text" class="form-control" [placeholder]="data">
     </div>
 
     <div class="mt-2 p-2">
       <label style="color: rgb(240, 184, 16);font-size:17px;" for="">Password</label>
-      <input #psw id="psw" name="psd" type="password" class="form-control">
+      <input (change)="psdChange($event)" id="psw" name="psd" type="password" class="form-control">
     </div>
 
     <div class="p-2">
-      <button type="button" (click)="login(acno,psw)" style="margin-top: 28px;" class="btn btn-outline-warning form-control"><b>Login</b></button>
+      <button type="button" (click)="login()" style="margin-top: 28px;" class="btn btn-outline-warning form-control"><b>Login</b></button>
     </div>
     <p style="text-align: center;color:bisque;margin-top:30px">Not registered?<a href="">Register Here</a> </p>
   </div>

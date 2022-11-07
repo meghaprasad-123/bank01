@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Josefin+Sans:wght@500&family=Lobster+Two:ital@1&display=swap');
 
 .hd1{
     text-align: center;
@@ -8,8 +9,8 @@
     margin-top: 25px;
 }
 #l1{
-    background: rgba(27, 24, 18, 0.7);
-    margin-top: 140px;
+    background: rgba(27, 24, 18, 0.6);
+    margin-top: 70px;
     width: 400px;
 }
 
