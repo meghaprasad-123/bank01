@@ -1,0 +1,23 @@
+
+<!-- <div><h3 class="text-light">{{aim}}</h3></div> -->
+
+<div class="row">
+  <div id="l1" class="container border border-dark ">
+      <h3 class="hd1">Login to your Account</h3>
+
+    <div class="mt-4 p-2">
+      <label style="color: rgb(240, 184, 16);font-size:17px;" for="">Account Number</label>
+      <input #acno id="acc" name="accno" type="text" class="form-control" [placeholder]="data">
+    </div>
+
+    <div class="mt-2 p-2">
+      <label style="color: rgb(240, 184, 16);font-size:17px;" for="">Password</label>
+      <input #psw id="psw" name="psd" type="password" class="form-control">
+    </div>
+
+    <div class="p-2">
+      <button type="button" (click)="login(acno,psw)" style="margin-top: 28px;" class="btn btn-outline-warning form-control"><b>Login</b></button>
+    </div>
+    <p style="text-align: center;color:bisque;margin-top:30px">Not registered?<a href="">Register Here</a> </p>
+  </div>
+</div>
