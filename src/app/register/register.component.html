@@ -1,0 +1,26 @@
+<div class="row">
+    <div id="r1" class="container border border-dark ">
+        <h3 class="hd2">Register Here</h3>
+  
+        <form action="" (ngSubmit)="register()" >
+      <div class="mt-4 p-2">
+        <label style="color: rgb(50, 224, 237);font-size:17px;" for="">Account Number</label>
+        <input [(ngModel)]="acno" id="acc" name="accno" type="text" class="form-control" >
+      </div>
+  
+      <div class="mt-2 p-2">
+        <label style="color: rgb(50, 224, 237);font-size:17px;" for="">Username</label>
+        <input [(ngModel)]="uname" id="user" name="us1" type="text" class="form-control">
+      </div>
+
+      <div class="mt-2 p-2">
+        <label style="color: rgb(50, 224, 237);font-size:17px;" for="">Password</label>
+        <input [(ngModel)]="psd" id="psd" name="password" type="password" class="form-control">
+      </div>
+  
+      <div class="p-2">
+        <button type="submit"  style="margin-top: 28px;" class="btn btn-outline-info form-control"><b>Register</b></button>
+      </div>
+    </form>
+    </div>
+  </div>
