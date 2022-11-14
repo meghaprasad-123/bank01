@@ -1,15 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-/* body{
-    background-image: url(./assets/bankwl1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-#box{
-    /* background-color: rgb(178, 176, 173); */
-    /* background: rgba(85, 83, 77, 0.7);
-} */ 
-
-
 
 body{
     background: rgba(0,0,0,0.4)url(./assets/scott-graham-5fNmWej4tAA-unsplash.jpg);
@@ -17,4 +6,6 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: darken;
+    background-attachment: fixed;
+    background-position: center;
 }

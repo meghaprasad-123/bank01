@@ -1,20 +1,28 @@
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+   </style>
+<h1 class="welcome">Welcome {{user}}</h1>
+<div class="text-center">
+<a style="padding-left: 15px;color:azure;text-decoration: none;" routerLink="/transaction">View transaction history</a>
+</div>
 <!-- deposit form -->
+
 <div class="row">
     <div id="d1" class="container border mt-5">
        <h2 style="text-align: center;margin-top: 25px;"><b>Deposit Form</b></h2>
 <div class="row">
        <div class="col-6">
-            <form action="">
+            <form action="" (ngSubmit)="deposit()">
                <div class="p-2 mt-3">
-                <input type="text" name="acno" placeholder="Enter your acc no" class="form-control">
+                <input [(ngModel)]="acno" type="text" name="acno" placeholder="Account no" class="form-control">
                </div>
 
                <div class="p-2">
-                <input type="password" name="psd" placeholder="Enter your password" class="form-control">
+                <input [(ngModel)]="psw" type="password" name="psd" placeholder="Password" class="form-control">
                </div>
 
                <div class="p-2">
-                <input type="text" name="amnt" placeholder="Amount to deposit" class="form-control">
+                <input [(ngModel)]="amnt" type="text" name="amnt" placeholder="Amount" class="form-control">
                </div>
 
                <div class="p-2">
@@ -39,17 +47,17 @@
 
       </div>
       <div class="col-6">
-         <form action="">
+         <form action="" (ngSubmit)="withdraw()">
             <div class="p-2 mt-3">
-             <input type="text" name="acno" placeholder="Enter your acc no" class="form-control">
+             <input [(ngModel)]="acno1" type="text" name="acno" placeholder="Account no" class="form-control">
             </div>
 
             <div class="p-2">
-             <input type="password" name="psd" placeholder="Enter your password" class="form-control">
+             <input [(ngModel)]="psw1" type="password" name="psd" placeholder="Password" class="form-control">
             </div>
 
             <div class="p-2">
-             <input type="text" name="amnt" placeholder="Withdrawing amount" class="form-control">
+             <input [(ngModel)]="amnt1" type="text" name="amnt" placeholder="Amount" class="form-control">
             </div>
 
             <div class="p-2">

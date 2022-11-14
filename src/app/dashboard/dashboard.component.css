@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
 
 #d1{
-    background-color: rgb(115, 129, 164);
+    background-color: rgba(94, 116, 171, 0.4);
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     width: 674px;
     height: 349px;
 }
 #w1{
-    background-color: rgb(115, 129, 164);
+    background-color: rgb(94, 116, 171,0.4);
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     width: 674px;
@@ -54,4 +55,11 @@ h2{
          height: 100px;
          margin-left: 15px;
     }
+}
+.welcome{
+    font-size: 60px;
+    color: whitesmoke;
+    font-family: 'Tangerine', cursive;
+    padding-top: 15px;
+    padding-left: 10px;
 }
