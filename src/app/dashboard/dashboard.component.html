@@ -12,17 +12,17 @@
        <h2 style="text-align: center;margin-top: 25px;"><b>Deposit Form</b></h2>
 <div class="row">
        <div class="col-6">
-            <form action="" (ngSubmit)="deposit()">
+            <form [formGroup]="depositform" action="" (ngSubmit)="deposit()">
                <div class="p-2 mt-3">
-                <input [(ngModel)]="acno" type="text" name="acno" placeholder="Account no" class="form-control">
+                <input formControlName="acno" type="text" name="acno" placeholder="Account no" class="form-control">
                </div>
 
                <div class="p-2">
-                <input [(ngModel)]="psw" type="password" name="psd" placeholder="Password" class="form-control">
+                <input formControlName="psw" type="password" name="psd" placeholder="Password" class="form-control">
                </div>
 
                <div class="p-2">
-                <input [(ngModel)]="amnt" type="text" name="amnt" placeholder="Amount" class="form-control">
+                <input formControlName="amnt" type="text" name="amnt" placeholder="Amount" class="form-control">
                </div>
 
                <div class="p-2">
@@ -47,17 +47,17 @@
 
       </div>
       <div class="col-6">
-         <form action="" (ngSubmit)="withdraw()">
+         <form [formGroup]="withdrawform" action="" (ngSubmit)="withdraw()">
             <div class="p-2 mt-3">
-             <input [(ngModel)]="acno1" type="text" name="acno" placeholder="Account no" class="form-control">
+             <input formControlName="acno1" type="text" name="acno" placeholder="Account no" class="form-control">
             </div>
 
             <div class="p-2">
-             <input [(ngModel)]="psw1" type="password" name="psd" placeholder="Password" class="form-control">
+             <input formControlName="psw1" type="password" name="psd" placeholder="Password" class="form-control">
             </div>
 
             <div class="p-2">
-             <input [(ngModel)]="amnt1" type="text" name="amnt" placeholder="Amount" class="form-control">
+             <input formControlName="amnt1" type="text" name="amnt" placeholder="Amount" class="form-control">
             </div>
 
             <div class="p-2">

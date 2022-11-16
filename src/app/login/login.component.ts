@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -14,49 +15,34 @@ export class LoginComponent implements OnInit {
   aim='Your perfect banking partner'
   data='enter your acc no'
 
-  // userDetails:any={
-  //   1000:{acno:1000, username:'Akash', password:123, balance:0},
-  //   1001:{acno:1001, username:'Amal', password:147, balance:0},
-  //   1002:{acno:1002, username:'Vishnu', password:120, balance:0},
-  //   1003:{acno:1003, username:'Rahul', password:123, balance:0},
-  //   1004:{acno:1004, username:'Karthik', password:852, balance:0}
-  // }
 
   // constructor(private router:Router) { }
-  constructor(private router:Router,private ds:DataService) { }
+  constructor(private router:Router,private ds:DataService,private formbuilder:FormBuilder) { }
+
+  //create login model
+  loginform=this.formbuilder.group({acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
+                              psd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9\W]+')]]})
 
   ngOnInit(): void {
   }
 
-  // login(){
-  //    var acno=this.acno
-  //    var psd=this.psd
-  //    var userDetails=this.userDetails
-
-  //    if(acno in userDetails){
-  //        if(psd==userDetails[acno]['password']){
-  //         alert('Login success')
-  //         //redirection
-  //         this.router.navigateByUrl('dashboard')
-  //        }
-  //        else{
-  //         alert('Incorrect password')
-  //        }
-  //    }
-  //    else{
-  //     alert('User not exist')
-  //    }
-  // }
   login(){
-       var acno=this.acno
-       var psd=this.psd
+       var acno=this.loginform.value.acno
+       var psd=this.loginform.value.psd
       
-      const result= this.ds.login(acno,psd)
-      if(result){
-        alert('Login success')
-        this.router.navigateByUrl('dashboard')
-        
+      if(this.loginform.valid){
+
+        const result = this.ds.login(acno,psd)
+
+        if(result){
+          alert('Login success')
+          this.router.navigateByUrl('dashboard')
+        }
       }
+      else{
+        alert('Invalid form')
+      }
+      
   }
 }
 
