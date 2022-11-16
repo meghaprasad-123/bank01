@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   constructor(private ds:DataService,private router:Router,private formbuilder:FormBuilder) { }
 
   //create register form model
-  registerForm=this.formbuilder.group({uname:['',[Validators.required,Validators.pattern('[a-zA-Z\W]+')]],acno:['',[Validators.required,Validators.pattern('[0-9]+')]],psd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9\W]+')]]})
+  registerForm=this.formbuilder.group({uname:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]],acno:['',[Validators.required,Validators.pattern('[0-9]+')]],psd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9\*_@]+')]]})
 
   ngOnInit(): void {
   }

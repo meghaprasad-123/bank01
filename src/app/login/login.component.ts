@@ -9,8 +9,6 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  acno:any
-  psd:any
 
   aim='Your perfect banking partner'
   data='enter your acc no'
@@ -21,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   //create login model
   loginform=this.formbuilder.group({acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
-                              psd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9\W]+')]]})
+                              psd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9\*_@]+')]]})
 
   ngOnInit(): void {
   }
@@ -30,9 +28,10 @@ export class LoginComponent implements OnInit {
        var acno=this.loginform.value.acno
        var psd=this.loginform.value.psd
       
+       const result = this.ds.login(acno,psd)
+
       if(this.loginform.valid){
 
-        const result = this.ds.login(acno,psd)
 
         if(result){
           alert('Login success')

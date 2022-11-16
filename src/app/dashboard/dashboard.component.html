@@ -16,10 +16,14 @@
                <div class="p-2 mt-3">
                 <input formControlName="acno" type="text" name="acno" placeholder="Account no" class="form-control">
                </div>
+               <div class="text-danger" *ngIf="this.depositform.get('acno')?.errors && this.depositform.get('acno')?.touched">&nbsp;Invalid acno</div>
+
 
                <div class="p-2">
                 <input formControlName="psw" type="password" name="psd" placeholder="Password" class="form-control">
                </div>
+               <div class="text-danger" *ngIf="this.depositform.get('psw')?.errors && this.depositform.get('psw')?.touched">&nbsp;Invalid Password</div>
+
 
                <div class="p-2">
                 <input formControlName="amnt" type="text" name="amnt" placeholder="Amount" class="form-control">
@@ -51,10 +55,14 @@
             <div class="p-2 mt-3">
              <input formControlName="acno1" type="text" name="acno" placeholder="Account no" class="form-control">
             </div>
+            <div class="text-danger" *ngIf="this.withdrawform.get('acno1')?.errors && this.withdrawform.get('acno1')?.touched">&nbsp;Invalid acno</div>
+
 
             <div class="p-2">
              <input formControlName="psw1" type="password" name="psd" placeholder="Password" class="form-control">
             </div>
+            <div class="text-danger" *ngIf="this.withdrawform.get('psw1')?.errors && this.withdrawform.get('psw1')?.touched">&nbsp;Invalid password</div>
+
 
             <div class="p-2">
              <input formControlName="amnt1" type="text" name="amnt" placeholder="Amount" class="form-control">
