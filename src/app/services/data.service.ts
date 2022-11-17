@@ -16,7 +16,33 @@ export class DataService {
     1004:{acno:1004, username:'Karthik', password:852, balance:0,transaction:[]}
   }
 
-  constructor() { }
+  constructor() { 
+    this.getData()
+  }
+//method to store datas in local storage
+  saveData(){
+    if(this.userDetails){
+      localStorage.setItem('database',JSON.stringify(this.userDetails))
+    }
+    if(this.currentuser){
+      localStorage.setItem('currentUser',JSON.stringify(this.currentuser))
+    }
+    if(this.currentacno){
+      localStorage.setItem('currentAcno',JSON.stringify(this.currentacno))
+    }
+  }
+  getData(){
+    if(localStorage.getItem('database')){
+      this.userDetails=JSON.parse(localStorage.getItem('database') || '')
+    }
+    if(localStorage.getItem('currentUser')){
+      this.currentuser=JSON.parse(localStorage.getItem('currentUser') || '')
+    }
+    if(localStorage.getItem('currentAcno')){
+      this.currentacno=JSON.parse(localStorage.getItem('currentAcno') || '')
+    }
+  }
+
 
   register(acno:any,username:any,password:any){
      var userDetails=this.userDetails
@@ -26,7 +52,7 @@ export class DataService {
      else{
       userDetails[acno]={acno,username,password,balance:0,transaction:[]}
       // console.log(userDetails);
-      
+      this.saveData()
       return true
      }
   }
@@ -40,6 +66,7 @@ export class DataService {
     if(acno in userDetails){
         if(psd==userDetails[acno]['password']){
           this.currentacno=acno
+          this.saveData()
            return true
         }
         else{
@@ -64,7 +91,7 @@ export class DataService {
 
       //add deposit details in transaction array
       userDetails[acno]['transaction'].push({type:'Credit',amount})
-
+      this.saveData()
       return userDetails[acno]['balance']
     }
     else{
@@ -89,6 +116,7 @@ export class DataService {
 
           //add to transaction history
           userDetails[acno]['transaction'].push({type:'Debit',amount})
+          this.saveData()
           return userDetails[acno]['balance']
   
         }

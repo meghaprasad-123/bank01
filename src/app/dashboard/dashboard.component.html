@@ -1,9 +1,13 @@
 <style>
    @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
    </style>
+   <div class="p-3" style="text-align: end;">
+      <button (click)="logout()" type="submit" class="btn btn-danger">Logout</button>
+   </div>
 <h1 class="welcome">Welcome {{user}}</h1>
 <div class="text-center">
-<a style="padding-left: 15px;color:azure;text-decoration: none;" routerLink="/transaction">View transaction history</a>
+   <button style="border-radius: 12px; background-color: black;"><a style="padding: 10px;text-decoration: none;color: rgb(214, 158, 16);" routerLink="/transaction">View transaction history</a>
+   </button>
 </div>
 <!-- deposit form -->
 

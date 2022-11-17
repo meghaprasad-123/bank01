@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
 
   // constructor(private router:Router) { }
-  constructor(private router:Router,private ds:DataService,private formbuilder:FormBuilder) { }
+  constructor(private router:Router,private ds:DataService,private formbuilder:FormBuilder) {}
 
   //create login model
   loginform=this.formbuilder.group({acno:['',[Validators.required,Validators.pattern('[0-9]+')]],

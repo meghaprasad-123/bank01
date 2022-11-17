@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class DashboardComponent implements OnInit {
   psw1:any
   amnt1:any
 
-  constructor(private ds:DataService,private formbuilder:FormBuilder) {
+  constructor(private ds:DataService,private formbuilder:FormBuilder,private router:Router) {
     this.user=this.ds.currentuser
    }
 
@@ -68,4 +69,10 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  logout(){
+    localStorage.removeItem('currentAcno')
+    localStorage.removeItem('currentUser')
+
+    this.router.navigateByUrl('')
+  }
 }
