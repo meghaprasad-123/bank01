@@ -31,6 +31,7 @@ export class DataService {
       localStorage.setItem('currentAcno',JSON.stringify(this.currentacno))
     }
   }
+  // to take data from locatstorage
   getData(){
     if(localStorage.getItem('database')){
       this.userDetails=JSON.parse(localStorage.getItem('database') || '')

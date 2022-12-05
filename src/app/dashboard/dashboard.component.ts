@@ -20,8 +20,12 @@ export class DashboardComponent implements OnInit {
   psw1:any
   amnt1:any
 
+  sdate:any
+
   constructor(private ds:DataService,private formbuilder:FormBuilder,private router:Router) {
     this.user=this.ds.currentuser
+
+    this.sdate=new Date()
    }
 
    //create dashboard model
@@ -34,6 +38,10 @@ export class DashboardComponent implements OnInit {
    amnt1:['',[Validators.required,Validators.pattern('[0-9]+')]]})
 
   ngOnInit(): void {
+    if(!localStorage.getItem('currentAcno')){
+      alert('Login first')
+      this.router.navigateByUrl('')
+    }
   }
 
   deposit(){
@@ -74,5 +82,14 @@ export class DashboardComponent implements OnInit {
     localStorage.removeItem('currentUser')
 
     this.router.navigateByUrl('')
+  }
+
+  delete(){
+    // alert('clicked')
+    this.acno=JSON.parse(localStorage.getItem('currentAcno')|| '') 
+  }
+
+  onCancel(){
+    this.acno=""
   }
 }
